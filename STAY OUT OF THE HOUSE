@@ -1,0 +1,35 @@
+StayOutMP — Multiplayer para Stay Out of the House
+
+Mod de multiplayer para Stay Out of the House (Puppet Combo). Um jogador hospeda e os outros entram pelo IP. Cada jogador vê os outros como bonecos coloridos se movendo em tempo real, e só aparecem para quem está na mesma cena.
+
+Créditos
+Criado por Felipe
+Jogo original: Stay Out of the House, de Puppet Combo (todos os direitos do jogo pertencem aos seus criadores)
+Framework de mods: BepInEx
+
+Este é um projeto de fã, sem relação com a Puppet Combo. É necessário ter uma cópia legítima do jogo.
+
+Instalação (todos os jogadores precisam fazer)
+Baixe o BepInEx 5.4.x x64 em github.com/BepInEx/BepInEx/releases e extraia na pasta do jogo (Steam → clique direito no jogo → Gerenciar → Procurar arquivos locais).
+Abra o jogo uma vez para o BepInEx criar as pastas e feche.
+Copie o arquivo StayOutMP.dll para a pasta BepInEx/plugins/.
+Como jogar
+F8 abre/fecha o menu do mod.
+Host: clique em Hospedar e libere a porta UDP 7777 no roteador. Se não conseguir, use uma VPN como Radmin VPN, ZeroTier ou Hamachi e passe o IP da VPN para os amigos.
+Amigos: digite o IP do host e clique em Entrar.
+As configurações ficam em BepInEx/config/com.stayoutmp.multiplayer.cfg.
+O que já funciona
+Host e entrada por IP (UDP), vários jogadores.
+Posição e rotação dos jogadores sincronizadas (20 vezes por segundo, com suavização).
+Jogadores só aparecem na mesma cena e somem ao desconectar.
+O que ainda não é sincronizado
+O assassino/IA (cada jogador vê a IA da própria partida)
+Portas, itens, inventário, chaves e armadilhas
+Vida/morte e finais
+Compilar o código
+Instale o .NET SDK.
+Na pasta do projeto, rode dotnet build -c Release.
+O arquivo StayOutMP.dll fica em bin/Release/net472/.
+Se der erro de versão do Unity, ajuste a versão do pacote UnityEngine.Modules no StayOutMP.csproj.
+
+Se o jogo for IL2CPP (pasta com GameAssembly.dll), é preciso usar o BepInEx 6 e adaptar o plugin.
